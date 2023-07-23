@@ -1,7 +1,9 @@
-#include <iostream>
-#include "sum.hpp"
+#include "application/Application.hpp"
 
 int main(int argc, char* argv[]) {
-    std::cout << "Hello World!" << sum(1, 2);
+    Application* app = CreateApllication();
+    app->run();
+
+    delete app;
     return 0;
 }
