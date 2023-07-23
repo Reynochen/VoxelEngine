@@ -8,8 +8,3 @@ target_include_directories(Graphics
     PUBLIC
     "include"
 )
-
-# target_compile_definitions(minus
-#     PUBLIC
-#     PUBLIC_SUM
-# )

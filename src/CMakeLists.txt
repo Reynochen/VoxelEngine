@@ -1,14 +1,10 @@
-# file(GLOB subdirs CONFIGURE_DEPENDS Graphics/*)
+file(GLOB subdirs CONFIGURE_DEPENDS *)
 
-# foreach(subdir ${subdirs})
-#     if(IS_DIRECTORY ${subdir} AND NOT ${subdir} MATCHES "include")
-#         get_filename_component(component "${subdir}" NAME) #Get component name
-        
-#         get_filename_component(modulepath "${subdir}" PATH) #Get module path
-#         get_filename_component(module "${modulepath}" NAME) #Get module name
+foreach(subdir ${subdirs})
+    if(IS_DIRECTORY ${subdir})
+        get_filename_component(module "${subdir}" NAME) #Get module name
+        add_subdirectory(${module})
+    endif()
+endforeach()
 
-#         add_subdirectory(${module}/${component})
-#     endif()
-# endforeach()
-
-add_subdirectory(Graphics)
+# add_subdirectory(Graphics)
